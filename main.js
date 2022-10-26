@@ -1,3 +1,4 @@
+/////////////////////////////////////////////////
 // Part One - Querying DOM Elements
 
 let unorderedList = document.querySelector('#arguments');
@@ -14,15 +15,19 @@ changeFontSize("x-large", "thing-1");
 
 /////////////////////////////////////////////////
 // Part Two - DOM Elements as Function Parameters
+let newImage = document.createElement('img');
+appendElement(newImage);
 
-appendElement("img");
-changeImageSize("img");
-invisibleClass("img");
+let image3 = document.querySelector('#image-3')
+changeImageSize(image3);
+
+let image2 = document.querySelector('#image-2')
+invisibleClass(image2);
 
 /////////////////////////////////////////////////
 // Part Three - Creating DOM Elements
-
-
+let newLi = liFunct("New List Item");
+appendElement(newLi);
 
 
 
@@ -31,6 +36,7 @@ invisibleClass("img");
 My functions are below
 
 */
+
 /////////////////////////////////////////////////
 // Part One
 // Line through function
@@ -56,31 +62,28 @@ function removeArgumentsListItem(){
 function changeFontSize(size, id){
     let idString = document.querySelector(`#${id}`);
     idString.style.fontSize = size;
- 
 }
 /////////////////////////////////////////////////
 // Part Two
 // Appends element to #arguments
-function appendElement(str){
-    let element = `${str}`
-    let newElement = document.createElement(element);
+function appendElement(newElement){
     unorderedList.appendChild(newElement);
 }
 
 // Changes image height to 30px
-function changeImageSize(image){
-    let element = `${image}`
-    let myImage = document.querySelector(element);
+function changeImageSize(myImage){
     myImage.style.height = "30px";
-    
 }
 
 // Makes element class invisible
-function invisibleClass(elementStr){
-    let element = `${elementStr}`;
-    let myElement = document.querySelector(element);
+function invisibleClass(myElement){
     myElement.className = "invisible";
 }
 /////////////////////////////////////////////////
 // Part Three
-//
+// The function returns a <li>
+function liFunct(myStr){
+    let listItem = document.createElement('li');
+    listItem.innerText = myStr;
+    return listItem;
+}
