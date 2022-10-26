@@ -105,9 +105,11 @@ function liFunct(myStr){
     listItem.innerText = myStr;
     return listItem;
 }
+
 // liFunct() call
 let newLi = liFunct("New List Item");
 appendElement(newLi);
+
 //The function creates a new header 
 function newHeader(size, text){
     let headerSize = `h${size}`
