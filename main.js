@@ -29,17 +29,16 @@ invisibleClass(image2);
 /////////////////////////////////////////////////
 // Part Three - Creating DOM Elements
 /////////////////////////////////////////////////
-let newLi = liFunct("New List Item");
-appendElement(newLi);
-
-
+//The first function call of part three is under its definition, below.
+let myHeader = newHeader("3", "My New Header");
+appendElement(myHeader);
 /////////////////////////////////////////////////
 
 
 
 /*
 
-My functions are below
+My functions are below.
 
 */
 
@@ -106,6 +105,14 @@ function liFunct(myStr){
     listItem.innerText = myStr;
     return listItem;
 }
-
-
+// liFunct() call
+let newLi = liFunct("New List Item");
+appendElement(newLi);
+//The function creates a new header 
+function newHeader(size, text){
+    let headerSize = `h${size}`
+    let header = document.createElement(headerSize);
+    header.innerText = text;
+    return header;
+}
 /////////////////////////////////////////////////
